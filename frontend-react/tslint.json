@@ -1,0 +1,32 @@
+{
+    "defaultSeverity": "error",
+    "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+    "jsRules": {},
+    "rules": {
+        "max-line-length": {
+            "options": 130
+        },
+        "semicolon": true,
+        "quotemark": {
+            "options": ["double", "avoid-escape"]
+        },
+        "ordered-imports": true,
+        "arrow-parens": true,
+        "trailing-comma": {
+            "options": {
+                "esSpecCompliant": false,
+                "multiline": "never",
+                "singleline": "never"
+            }
+        },
+        "jsx-boolean-value": [true, "never"],
+        "member-access": false,
+        "jsx-no-lambda": false,
+        "jsx-no-multiline-js": false,
+        "object-literal-sort-keys": false
+    },
+    "rulesDirectory": [],
+    "linterOptions": {
+        "exclude": ["config/**/*.js", "node_modules/**/*.ts", "*/serviceWorker.ts"]
+    }
+}
