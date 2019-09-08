@@ -16,7 +16,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class GameServiceImpl implements GameService {
 
     private final PlayerRepository repo;
-    private PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
     public GameServiceImpl(PlayerRepository repo) {
         this.repo = repo;

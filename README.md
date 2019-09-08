@@ -1,7 +1,7 @@
 # fatesim
 > *Dormammu, I’ve come to bargain for a framework...*
 
-So this is going to be simplest game ever, the point is that I want to implement this on several different platforms, frameworks, languages etc. Later on I'm will select a the solutions I liked the most and add some more features to it.
+So this is going to be simplest game ever, the point is that I want to implement this on several different platforms, frameworks, languages etc. Later on I'll select and combine the stack I liked the most and add some more features.
 
 My final goals are to deploy it on a proper domain with AWS or something of this sort, and to release it on Google Play and on the App Store.
 
@@ -31,13 +31,3 @@ Game logic will be detailed in an issue after the first implementation.
 #### Database
 * something SQL (like PostreSQL)
 * something NoSQL (like MongoDB)
- 
-
- 
-
-
-
-
-
-
-

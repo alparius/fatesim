@@ -14,17 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Component
-public class MySavedRequestAwareAuthenticationSuccessHandler
-        extends SimpleUrlAuthenticationSuccessHandler {
+public class MySavedRequestAwareAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
-    private static final Logger log = LoggerFactory.getLogger(MySavedRequestAwareAuthenticationSuccessHandler.class);
-
-    private RequestCache requestCache = new HttpSessionRequestCache();
+    private final RequestCache requestCache = new HttpSessionRequestCache();
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
-        log.warn("onAuthenticationSuccess...");
-
         SavedRequest savedRequest = requestCache.getRequest(request, response);
 
         if (savedRequest == null) {
