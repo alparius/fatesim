@@ -23,6 +23,7 @@
         "member-access": false,
         "jsx-no-lambda": false,
         "jsx-no-multiline-js": false,
+        "interface-name": false,
         "object-literal-sort-keys": false
     },
     "rulesDirectory": [],

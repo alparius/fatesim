@@ -1,22 +1,28 @@
 import React from "react";
-import "./App.css";
-import LoginForm from "./app/Auth";
-import logo from "./logo.svg";
+import { Route } from "react-router-dom";
+import { Container } from "semantic-ui-react";
+import GamePage from "./pages/GamePage";
+import LeaderboardPage from "./pages/LeaderboardPage";
+import LoginPage from "./pages/LoginPage";
+import Navbar from "./pages/Navbar";
+import RegisterPage from "./pages/RegisterPage";
+import GuardedRoute from "./tools/GuardedRoute";
+import useSession from "./tools/useSession";
 
 const App: React.FC = () => {
+    const { user, setUser, handleLogout } = useSession();
+
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
-                <LoginForm />
-            </header>
-        </div>
+        <>
+            <Navbar handleLogout={handleLogout} user={user} />
+
+            <Container style={{ marginTop: "10vh" }}>
+                <GuardedRoute exact path="/" user={user} render={() => <GamePage player={user} />} />
+                <Route path="/login" render={() => <LoginPage user={user} setUser={setUser} />} />
+                <Route path="/register" component={RegisterPage} />
+                <GuardedRoute path="/leaderboard" user={user} component={LeaderboardPage} />
+            </Container>
+        </>
     );
 };
 
